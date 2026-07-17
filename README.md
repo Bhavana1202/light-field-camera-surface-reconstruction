@@ -1,4 +1,4 @@
-# Master's Thesis: Investigating Shearing and Hybrid Architectures for Sparse-to-Dense Light Field View Synthesis
+# Light Field Camera Surface Reconstruction
 
 Universität Heidelberg, 2026.
 
