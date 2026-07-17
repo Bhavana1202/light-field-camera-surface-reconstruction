@@ -1,0 +1,40 @@
+# Large binary artifacts
+*.h5
+*.pth
+*.hdf5
+*.ckpt
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# LaTeX build artifacts (excluded by extension, but result logs kept)
+*.aux
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.xml
+# Note: *.log excluded ONLY for LaTeX; research logs in results/ are explicitly tracked
+*.log
+!results/**/*.log
+
+# Local scratch directories
+scratch/
+tmp/
+nohup.out

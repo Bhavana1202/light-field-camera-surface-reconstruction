@@ -1,0 +1,14 @@
+nohup: ignoring input
+Namespace(angular_in=2, angular_out=7, arb_sample=0, batch_size=1, dataset='HCI', dataset_path='./LFData/train_HCI.h5', layer_num=4, lr=0.0001, max_epoch=301, num_cp=50, num_snapshot=1, patch_size=64, psv_range=4, psv_step=50, reduce=0.5, resume_epoch=0, shear_amount=0.0, smooth=0.001, step=100)
+===> Loading datasets
+loaded 28 LFIs from ./LFData/train_HCI.h5
+building net
+==>training
+/home/bkrishna/anaconda3/envs/LFASR/lib/python3.6/site-packages/torch/nn/functional.py:4004: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+  "Default grid_sample and affine_grid behavior has changed "
+checkpoint saved to model_fixIn_HCI_S4_pr4_ps50_lr0.0001_step100x0.5_shear0.0/model_epoch_50.pth
+checkpoint saved to model_fixIn_HCI_S4_pr4_ps50_lr0.0001_step100x0.5_shear0.0/model_epoch_100.pth
+checkpoint saved to model_fixIn_HCI_S4_pr4_ps50_lr0.0001_step100x0.5_shear0.0/model_epoch_150.pth
+checkpoint saved to model_fixIn_HCI_S4_pr4_ps50_lr0.0001_step100x0.5_shear0.0/model_epoch_200.pth
+checkpoint saved to model_fixIn_HCI_S4_pr4_ps50_lr0.0001_step100x0.5_shear0.0/model_epoch_250.pth
+checkpoint saved to model_fixIn_HCI_S4_pr4_ps50_lr0.0001_step100x0.5_shear0.0/model_epoch_300.pth

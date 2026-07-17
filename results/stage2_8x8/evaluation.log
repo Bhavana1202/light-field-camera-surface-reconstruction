@@ -1,0 +1,150 @@
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  0: PSNR 60-view = 38.42  PSNR 64-view = 38.48  SSIM 60-view = 0.9702
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 38.42 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    38.48 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  1: PSNR 60-view = 39.38  PSNR 64-view = 39.34  SSIM 60-view = 0.9785
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 39.38 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    39.34 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  2: PSNR 60-view = 39.34  PSNR 64-view = 39.41  SSIM 60-view = 0.9425
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 39.34 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    39.41 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  3: PSNR 60-view = 38.26  PSNR 64-view = 38.35  SSIM 60-view = 0.9448
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 38.26 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    38.35 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  4: PSNR 60-view = 35.26  PSNR 64-view = 35.31  SSIM 60-view = 0.9549
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 35.26 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    35.31 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  5: PSNR 60-view = 41.22  PSNR 64-view = 41.24  SSIM 60-view = 0.9701
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 41.22 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    41.24 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  6: PSNR 60-view = 36.04  PSNR 64-view = 36.09  SSIM 60-view = 0.9611
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 36.04 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    36.09 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  7: PSNR 60-view = 35.34  PSNR 64-view = 35.42  SSIM 60-view = 0.9663
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 35.34 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    35.42 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  8: PSNR 60-view = 32.09  PSNR 64-view = 32.03  SSIM 60-view = 0.9645
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 32.09 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    32.03 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene  9: PSNR 60-view = 41.16  PSNR 64-view = 41.15  SSIM 60-view = 0.9753
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 41.16 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    41.15 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 10: PSNR 60-view = 44.58  PSNR 64-view = 44.62  SSIM 60-view = 0.9824
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 44.58 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    44.62 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 11: PSNR 60-view = 38.63  PSNR 64-view = 38.64  SSIM 60-view = 0.9686
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 38.63 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    38.64 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 12: PSNR 60-view = 35.79  PSNR 64-view = 35.78  SSIM 60-view = 0.9584
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 35.79 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    35.78 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 13: PSNR 60-view = 38.56  PSNR 64-view = 38.58  SSIM 60-view = 0.9564
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 38.56 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    38.58 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 14: PSNR 60-view = 42.72  PSNR 64-view = 42.74  SSIM 60-view = 0.9793
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 42.72 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    42.74 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 15: PSNR 60-view = 40.27  PSNR 64-view = 40.33  SSIM 60-view = 0.9832
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 40.27 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    40.33 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 16: PSNR 60-view = 41.91  PSNR 64-view = 41.97  SSIM 60-view = 0.9796
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 41.91 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    41.97 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 17: PSNR 60-view = 28.33  PSNR 64-view = 28.37  SSIM 60-view = 0.9233
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 28.33 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    28.37 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 18: PSNR 60-view = 30.92  PSNR 64-view = 30.89  SSIM 60-view = 0.9464
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 30.92 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    30.89 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 19: PSNR 60-view = 25.83  PSNR 64-view = 25.77  SSIM 60-view = 0.8944
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 25.83 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    25.77 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 20: PSNR 60-view = 28.95  PSNR 64-view = 28.96  SSIM 60-view = 0.9274
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 28.95 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    28.96 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 21: PSNR 60-view = 24.02  PSNR 64-view = 24.01  SSIM 60-view = 0.8924
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 24.02 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    24.01 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 22: PSNR 60-view = 27.03  PSNR 64-view = 27.00  SSIM 60-view = 0.9159
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 27.03 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    27.00 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 23: PSNR 60-view = 34.15  PSNR 64-view = 34.16  SSIM 60-view = 0.9686
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 34.15 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    34.16 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 24: PSNR 60-view = 30.53  PSNR 64-view = 30.51  SSIM 60-view = 0.9210
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 30.53 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    30.51 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 25: PSNR 60-view = 27.79  PSNR 64-view = 27.73  SSIM 60-view = 0.9338
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 27.79 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    27.73 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 26: PSNR 60-view = 29.34  PSNR 64-view = 29.28  SSIM 60-view = 0.9363
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 29.34 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    29.28 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 27: PSNR 60-view = 28.69  PSNR 64-view = 28.65  SSIM 60-view = 0.9226
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 28.69 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    28.65 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 28: PSNR 60-view = 31.48  PSNR 64-view = 31.47  SSIM 60-view = 0.9437
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 31.48 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    31.47 dB
+  missing keys: 0 (should be 0)
+  all keys loaded correctly
+  scene 29: PSNR 60-view = 28.24  PSNR 64-view = 28.24  SSIM 60-view = 0.9394
+FINAL: mean PSNR 60-view (vs SADenseNet 40.31): 28.24 dB
+FINAL: mean PSNR 64-view (FS-GAF convention):    28.24 dB

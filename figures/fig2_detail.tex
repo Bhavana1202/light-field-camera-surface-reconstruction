@@ -1,0 +1,108 @@
+% Figure 2: Module-level architecture detail of the hybrid model.
+%
+% Required preamble:
+%   \usepackage{tikz}
+%   \usetikzlibrary{arrows.meta, positioning, fit, backgrounds, calc, shapes.geometric}
+
+\begin{tikzpicture}[
+    >=latex,
+    font=\footnotesize,
+    node distance=7mm and 9mm,
+    op/.style={
+        rectangle, draw, rounded corners=2pt,
+        minimum height=9mm, minimum width=20mm,
+        align=center, fill=white, thick
+    },
+    coarse/.style={op, fill=blue!8,    draw=blue!50!black},
+    fine/.style  ={op, fill=orange!10, draw=orange!60!black},
+    block/.style ={op, fill=orange!18, draw=orange!60!black, minimum width=22mm},
+    tail/.style  ={op, fill=orange!5,  draw=orange!60!black},
+    data/.style  ={op, fill=gray!8, draw=gray!50, font=\scriptsize\itshape, minimum height=8mm},
+    skip/.style  ={->, thick, dashed, draw=orange!60!black},
+    confskip/.style={->, thick, draw=blue!50!black},
+    arrow/.style ={->, thick, draw=black!75}
+]
+
+% ============================================================
+% STAGE 1: COARSE SAI SYNTHESIS (Net_view)
+% ============================================================
+
+\node[data]                     (in)    {Input SAIs \\ $(K, h, w)$};
+\node[coarse, right=of in]      (psv)   {PSV \\ Construction};
+\node[coarse, right=of psv]     (disp)  {Disparity \\ Estimation};
+\node[coarse, right=of disp]    (warp)  {Backward \\ Warping};
+\node[coarse, right=of warp]    (blend) {Confidence \\ Blending};
+\node[data,   right=of blend]   (inter) {Intermediate LF \\ $(a^2, h, w)$};
+
+\draw[arrow] (in)    -- (psv);
+\draw[arrow] (psv)   -- (disp);
+\draw[arrow] (disp)  -- (warp);
+\draw[arrow] (warp)  -- (blend);
+\draw[arrow] (blend) -- (inter);
+
+\draw[confskip] (disp.south) to[bend right=35]
+   node[below, font=\scriptsize, yshift=-0.5mm] {confidence maps} (blend.south);
+
+\begin{scope}[on background layer]
+  \node[fit=(psv)(disp)(warp)(blend), draw=blue!50!black, dashed, inner sep=8mm,
+        label={[blue!50!black, font=\small\bfseries, yshift=1mm]above:%
+          Stage 1: Coarse SAI Synthesis (FS-GAF Net\_view, unchanged)}] {};
+\end{scope}
+
+% ============================================================
+% STAGE 2: SADenseRefine
+% ============================================================
+
+\node[fine, below=24mm of inter, xshift=-22mm] (reshape) {Reshape \\ $(a^2{,}h{,}w)\!\to\!(1{,}a{,}a{,}h{,}w)$};
+
+\node[block, left=8mm of reshape] (b1) {Corr-Block 1};
+\node[block, left=of b1]          (b2) {Corr-Block 2};
+\node[block, left=of b2]          (b3) {$\cdots$};
+\node[block, left=of b3]          (b6) {Corr-Block 6};
+
+\node[tail, below=12mm of b6] (r0) {Reduce0 \\ Spatial $\!\to\!64$};
+\node[tail, right=of r0]      (r1) {Reduce1 \\ $64\!\to\!64$};
+\node[tail, right=of r1]      (r2) {Reduce2 \\ $64\!\to\!1$};
+
+\node[circle, draw, thick, fill=white, inner sep=2pt, right=10mm of r2] (sum) {\large $+$};
+\node[data, below=8mm of sum] (out) {Dense LF \\ $(a^2, h, w)$};
+
+% --- data flow ---
+\draw[arrow] (inter.south) -- ++(0,-7mm) -| (reshape.north);
+\draw[arrow] (reshape) -- (b1);
+\draw[arrow] (b1) -- (b2);
+\draw[arrow] (b2) -- (b3);
+\draw[arrow] (b3) -- (b6);
+\draw[arrow] (b6.south) -- (r0.north);
+\draw[arrow] (r0) -- (r1);
+\draw[arrow] (r1) -- (r2);
+\draw[arrow] (r2) -- (sum);
+\draw[arrow] (sum) -- (out);
+
+% identity path: route OUTSIDE the SADenseNet box
+\coordinate (idStart) at ($(inter.east)+(8mm,0)$);
+\draw[arrow]
+   (inter.east) -- (idStart)
+   |- ($(sum.east)+(8mm,0)$) coordinate (idCorner)
+   -- (sum.east);
+\node[font=\scriptsize, anchor=west] at ($(idCorner)+(0.5mm,4mm)$) {identity};
+
+% dense skip illustration
+\draw[skip] (b1.south) to[bend right=15] (b6.south);
+\draw[skip] (reshape.north west) to[bend left=18] (b6.north east);
+
+% structure callout
+\node[op, fill=orange!5, draw=orange!60!black, minimum width=72mm, align=left,
+      below=10mm of r0] (callout)
+  {\textbf{Each Corr-Block:} \\
+   $5\times$ Spatial-Conv (Conv3D, kernel $1{\times}3{\times}3$, dense skips) \\
+   $+\ 1\times$ Angular-Conv (Conv3D, kernel $1{\times}3{\times}3$, angular axes) \\
+   Channel growth: $1\!\to\!32\!\to\!64\!\to\!96\!\to\!128\!\to\!160$};
+
+\begin{scope}[on background layer]
+  \node[fit=(reshape)(b6)(r0)(r2)(sum)(out)(callout), draw=orange!60!black, dashed, inner sep=6mm,
+        label={[orange!60!black, font=\small\bfseries, yshift=-2mm]below:%
+          Stage 2: SADenseRefine (1{,}119{,}297 parameters, our PyTorch port)}] {};
+\end{scope}
+
+\end{tikzpicture}

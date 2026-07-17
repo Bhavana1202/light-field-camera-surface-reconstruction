@@ -1,0 +1,52 @@
+% Figure 1: High-level overview of the hybrid architecture.
+%
+% Required preamble:
+%   \usepackage{tikz}
+%   \usetikzlibrary{arrows.meta, positioning, fit, backgrounds, calc, shapes.geometric}
+
+\begin{tikzpicture}[
+    >=latex,
+    font=\small,
+    node distance=12mm and 16mm,
+    block/.style={
+        rectangle, draw, thick, rounded corners=2pt,
+        minimum height=14mm, minimum width=32mm,
+        align=center, fill=white
+    },
+    coarse/.style={block, fill=blue!8,   draw=blue!50!black},
+    fine/.style  ={block, fill=orange!12, draw=orange!60!black, line width=0.9pt},
+    data/.style ={block, fill=gray!8, draw=gray!60, minimum width=26mm, minimum height=12mm},
+    arrow/.style={->, thick, draw=black!75}
+]
+
+% ---- top row: input -> coarse -> intermediate ----
+\node[data]                       (input) {Sparse LF \\ ($K{=}4$ corner SAIs)};
+\node[coarse, right=of input]     (coarse) {Coarse SAI Synthesis \\ \footnotesize FS-GAF \texttt{Net\_view}};
+\node[data,   right=of coarse]    (inter)  {Intermediate LF \\ ($a{\times}a$ views)};
+
+% ---- second row: fine -> sum -> output (right to left for visual flow) ----
+\node[fine, below=20mm of inter]  (fine)   {Correlation-Based \\ Refinement \\ \footnotesize \texttt{SADenseRefine}};
+
+\node[circle, draw, thick, fill=white, inner sep=1.5pt, left=20mm of fine] (sum) {$+$};
+\node[data, left=of sum]          (output) {Dense LF \\ ($a{\times}a$ views, refined)};
+
+% ---- arrows ----
+\draw[arrow] (input)  -- (coarse);
+\draw[arrow] (coarse) -- (inter);
+\draw[arrow] (inter)  -- (fine);
+\draw[arrow] (fine)   -- node[above, font=\scriptsize] {residual} (sum);
+\draw[arrow] (inter.south west) to[bend right=12]
+    node[right, pos=0.65, font=\scriptsize] {identity} (sum.north);
+\draw[arrow] (sum)    -- (output);
+
+% ---- stage backgrounds ----
+\begin{scope}[on background layer]
+  \node[fit=(coarse), draw=blue!50!black, dashed, inner sep=5mm,
+        label={[blue!50!black, font=\small\bfseries, yshift=1mm]above:%
+          Stage 1: Coarse (FS-GAF, unchanged)}] {};
+  \node[fit=(fine), draw=orange!60!black, dashed, inner sep=5mm,
+        label={[orange!60!black, font=\small\bfseries, yshift=-1mm]below:%
+          Stage 2: Refinement (our PyTorch port, ported from SADenseNet)}] {};
+\end{scope}
+
+\end{tikzpicture}
